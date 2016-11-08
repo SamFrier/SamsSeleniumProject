@@ -1,0 +1,32 @@
+version: '2'
+
+services:
+
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile-server
+    ports:
+      - "4444:4444"
+
+  node:
+    depends_on:
+      - server
+    build:
+      context: .
+      dockerfile: Dockerfile-node
+    ports:
+      - "5555:5555"
+    links:
+      - server:selenium-server
+
+#  tests:
+#    depends_on:
+#      - node
+#      - server
+#    build:
+#      context: .
+#      dockerfile: Dockerfile-tests
+#    links:
+#      - server:selenium-server
+#      - node:selenium-node
