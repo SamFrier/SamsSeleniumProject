@@ -1,7 +1,5 @@
 # Selenium-Grid: A Beginner's Guide
 
-### By Sam Frier
-
 ## Introduction
 
 Selenium is, in general, a framework designed to automate web browser activity; however its primary use is to provide automated testing for web applications. It includes a scripting language (Selenese) that allows users to write tests for various different programming languages, including Ruby, Python and Java. Alternatively, users can write tests in an IDE instead of via a script. When run, Selenium creates an instance of a specified web browser (real or virtual) and runs the tests inside it.
