@@ -32,11 +32,11 @@ This guide will focus on installing Selenium-Grid on a machine running Ubuntu 16
 
 4.	In order for the nodes to run tests, you will need to make sure the browser(s) you want to test on are installed on the node machine. For example, in order to set up Firefox on a node:
 
-	*	Install the browser itself via e.g. apt-get.
+	*	Install the browser itself via e.g. `apt-get`.
 	
 	*	Install the geckodriver for Firefox (this is required for Selenium Server 3.0 and later), which requires its own set of steps:
 
-		*	Download the geckodriver tarball using e.g. wget from here: https://github.com/mozilla/geckodriver
+		*	Download the geckodriver tarball using e.g. `wget` from here: https://github.com/mozilla/geckodriver
 		
 		*	Unpack the tarball into a directory of your choice.
 		*	Add this directory to your path:
@@ -45,9 +45,9 @@ This guide will focus on installing Selenium-Grid on a machine running Ubuntu 16
 		      
 		*	Depending on the environment in which your node is running (e.g. a Docker container), you may want to run the browser in headless mode. In Ubuntu, this can be done via the following method:
 		
-		*	Install Xvfb using the command apt-get install -y xvfb.
+		*	Install Xvfb using the command `apt-get install -y xvfb`.
 		
-		*	Set the DISPLAY environment variable to something other than :0:
+		*	Set the `DISPLAY` environment variable to something other than `:0`:
 		
 			    ~$ export DISPLAY=:1
 			    
@@ -59,9 +59,9 @@ This guide will focus on installing Selenium-Grid on a machine running Ubuntu 16
 
 	    ~$ java -jar selenium-server-standalone.jar -role node –hub http://<hub_ip>:4444/grid/register
 	    
-	where <hub_ip> is the IP address of your hub (or localhost if running the node on the same machine as the hub).
+	where `<hub_ip>` is the IP address of your hub (or `localhost` if running the node on the same machine as the hub).
 	
-Once the hub and node(s) are set up, visit http://<server_ip>:4444/grid/console to view the grid.
+Once the hub and node(s) are set up, visit `http://<server_ip>:4444/grid/console` to view the grid.
 
 
 ## Usage Guide
