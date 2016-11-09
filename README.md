@@ -44,7 +44,7 @@ finally:
   driver.quit()
 When we run this script, Python will create a driver that connects to the Selenium-Grid hub and requests a Firefox browser. The hub will then register a Firefox instance on one of the nodes to this driver. The driver then sends a request for the specified URL to the node, which opens the page in Firefox and sends the contents back to the driver. Finally, we can check the page’s title and test if it is what we were expecting.
 ~$ python se_test.py
-Welcome to Python.org`
+Welcome to Python.org
 
 (Since the unit test was successful, it will not produce any output.)
 
