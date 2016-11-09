@@ -14,8 +14,10 @@ When developing a web application, Selenium-Grid can be incorporated into the De
 
 This guide will focus on installing Selenium-Grid on a machine running Ubuntu 16.04, however the process is similar for other operating systems. Selenium-Grid requires Java 8 or higher on both the hub and nodes.
 
-1.	Download the Selenium Server jar file from this link: https://goo.gl/Lyo36k
-	  Alternatively, download the file via the command line: `~$ wget –O selenium-server-standalone.jar https://goo.gl/Lyo36k`
+1.	Download the Selenium Server jar file from this link: 
+        https://goo.gl/Lyo36k
+	Alternatively, download the file via the command line: 
+	`~$ wget –O selenium-server-standalone.jar https://goo.gl/Lyo36k`
 2.	Start a hub using the following command: `~$ java -jar selenium-server-standalone.jar -role hub` If you want to use this machine while the hub is running, specify that the process should run in the background by adding a & to the end of the command.
 3.	For the Selenium node(s), download the jar file as above. (We will be using a different set of flags when running it on a node, which will be given later.)
 4.	In order for the nodes to run tests, you will need to make sure the browser(s) you want to test on are installed on the node machine. For example, in order to set up Firefox on a node:
