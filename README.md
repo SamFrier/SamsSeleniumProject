@@ -24,11 +24,11 @@ For example, let’s define a very simple test in Python. First we must download
 
 From here, we can write the following script to test the title of a web page:
 
-`\# filename: se_test.py`
+`# filename: se_test.py`
 
-from selenium import webdriver
+`from selenium import webdriver`
 
-driver = webdriver.Remote(
+`driver = webdriver.Remote(`
 command_executor = "http://<hub_ip>:4444/wd/hub", # add your hub’s IP address here
   desired_capabilities = {
     "browserName": "firefox",
