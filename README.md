@@ -20,15 +20,11 @@ This guide will focus on installing Selenium-Grid on a machine running Ubuntu 16
 	
 	Alternatively, download the file via the command line:
 	
-	    ```
 	    ~$ wget –O selenium-server-standalone.jar https://goo.gl/Lyo36k
-	    ```
 	
 2.	Start a hub using the following command: 
 
-            ```Shell
             ~$ java -jar selenium-server-standalone.jar -role hub
-	    ```
 	
 	If you want to use this machine while the hub is running, specify that the process should run in the background by adding a `&` to the end of the command.
 	
@@ -36,9 +32,9 @@ This guide will focus on installing Selenium-Grid on a machine running Ubuntu 16
 
 4.	In order for the nodes to run tests, you will need to make sure the browser(s) you want to test on are installed on the node machine. For example, in order to set up Firefox on a node:
 
-* Install the browser itself via e.g. apt-get.
+	* Install the browser itself via e.g. apt-get.
 	
-* Install the geckodriver for Firefox (this is required for Selenium Server 3.0 and later), which requires its own set of steps:
+	* Install the geckodriver for Firefox (this is required for Selenium Server 3.0 and later), which requires its own set of steps:
 Download the geckodriver tarball using e.g. wget from here: https://github.com/mozilla/geckodriver 
 Unpack the tarball into a directory of your choice.
 iii.	Add this directory to your path:
