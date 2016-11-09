@@ -12,9 +12,7 @@ When developing a web application, Selenium-Grid can be incorporated into the De
 
 This guide will focus on installing Selenium-Grid on a machine running Ubuntu 16.04, however the process is similar for other operating systems. Selenium-Grid requires Java 8 or higher on both the hub and nodes.
 
-1.	Download the Selenium Server jar file from this link: 
-
-	    https://goo.gl/Lyo36k
+1.	Download the Selenium Server jar file from this link: https://goo.gl/Lyo36k
 	
 	Alternatively, download the file via the command line:
 	
