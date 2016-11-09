@@ -24,7 +24,7 @@ For example, let’s define a very simple test in Python. First we must download
 
 From here, we can write the following script to test the title of a web page:
 
-`\# filename: se_test.py
+`\# filename: se_test.py`
 
 from selenium import webdriver
 
