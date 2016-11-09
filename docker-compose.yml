@@ -9,12 +9,12 @@ services:
     ports:
       - "4444:4444"
 
-  node:
+  node-firefox:
     depends_on:
       - hub
     build:
       context: .
-      dockerfile: Dockerfile-node
+      dockerfile: Dockerfile-node-firefox
     ports:
       - "5555:5555"
     links:
