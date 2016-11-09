@@ -24,7 +24,7 @@ This guide will focus on installing Selenium-Grid on a machine running Ubuntu 16
 	
 2.	Start a hub using the following command: 
 
-            ~$ java -jar selenium-server-standalone.jar -role hub
+	    ~$ java -jar selenium-server-standalone.jar -role hub
 	
 	If you want to use this machine while the hub is running, specify that the process should run in the background by adding a `&` to the end of the command.
 	
@@ -41,7 +41,7 @@ This guide will focus on installing Selenium-Grid on a machine running Ubuntu 16
 		*	Unpack the tarball into a directory of your choice.
 		*	Add this directory to your path:
 		
-		    	    ~$ export PATH=$PATH:/path/to/geckodriver
+			    ~$ export PATH=$PATH:/path/to/geckodriver
 		      
 		*	Depending on the environment in which your node is running (e.g. a Docker container), you may want to run the browser in headless mode. In Ubuntu, this can be done via the following method:
 		
