@@ -43,15 +43,24 @@ This guide will focus on installing Selenium-Grid on a machine running Ubuntu 16
 		
 		    	    ~$ export PATH=$PATH:/path/to/geckodriver
 		      
-c.	Depending on the environment in which your node is running (e.g. a Docker container), you may want to run the browser in headless mode. In Ubuntu, this can be done via the following method:
-i.	Install Xvfb using the command apt-get install -y xvfb.
-ii.	Set the DISPLAY environment variable to something other than :0:
-~$ export DISPLAY=:1
-iii.	Run Xvfb as a background process using the display you specified:
-~$ Xvfb :1 &
+		*	Depending on the environment in which your node is running (e.g. a Docker container), you may want to run the browser in headless mode. In Ubuntu, this can be done via the following method:
+		
+		*	Install Xvfb using the command apt-get install -y xvfb.
+		
+		*	Set the DISPLAY environment variable to something other than :0:
+		
+			    ~$ export DISPLAY=:1
+			    
+		*	Run Xvfb as a background process using the display you specified:
+		
+			    ~$ Xvfb :1 &
+			    
 5.	Finally, start the nodes via this command:
-~$ java -jar selenium-server-standalone.jar -role node –hub http://<hub_ip>:4444/grid/register
-where <hub_ip> is the IP address of your hub (or localhost if running the node on the same machine as the hub).
+
+	    ~$ java -jar selenium-server-standalone.jar -role node –hub http://<hub_ip>:4444/grid/register
+	    
+	where <hub_ip> is the IP address of your hub (or localhost if running the node on the same machine as the hub).
+	
 Once the hub and node(s) are set up, visit http://<server_ip>:4444/grid/console to view the grid.
 
 
