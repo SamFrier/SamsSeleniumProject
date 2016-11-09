@@ -20,7 +20,9 @@ By connecting to the Selenium-Grid, we can run automated tests in a variety of l
 
 For example, let’s define a very simple test in Python. First we must download the Selenium module for Python:
 
-`# pip install selenium`
+```
+~$ pip install selenium`
+```
 
 From here, we can write the following script to test the title of a web page:
 
