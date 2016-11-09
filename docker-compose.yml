@@ -15,7 +15,14 @@ services:
     build:
       context: .
       dockerfile: Dockerfile-node-firefox
-    ports:
-      - "5555:5555"
     links:
       - hub:selenium-hub
+
+#  node-chrome:
+#    depends-on:
+#      - hub
+#    build:
+#      context: .
+#      dockerfile: Dockerfile-node-chrome
+#    links:
+#      - hub:selenium-hub

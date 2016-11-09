@@ -1,0 +1,19 @@
+FROM ubuntu
+MAINTAINER SamFrier
+
+# Download Selenium Server
+ADD https://goo.gl/Lyo36k /opt/selenium-server-standalone.jar
+
+# Install Java
+RUN apt-get update
+RUN apt-get install -y openjdk-8-jre openjdk-8-jdk
+
+# Install Chrome
+# haha, good luck
+
+# Set Chrome to run in headless mode(?)
+RUN apt-get install -y xvfb
+ENV DISPLAY :1
+
+ENTRYPOINT Xvfb :1 &\
+java -jar /opt/selenium-server-standalone.jar -role node -hub http://selenium-hub:4444/grid/register -browser browserName=chrome,maxInstances=5
