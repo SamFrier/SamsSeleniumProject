@@ -61,7 +61,7 @@ This guide will focus on installing Selenium-Grid on a machine running Ubuntu 16
 	    
 	where `<hub_ip>` is the IP address of your hub (or `localhost` if running the node on the same machine as the hub). We can also use the `-browser` flag to specify what browser instances we want to run on the node (this flag can be used multiple times if desired):
 	
-	    ~$ java -jar selenium-server-standalone.jar -role node –hub http://<hub_ip>:4444/grid/register -browser browserName=firefox maxInstances=5
+	    ~$ java -jar selenium-server-standalone.jar -role node –hub http://<hub_ip>:4444/grid/register -browser browserName=firefox,maxInstances=5
 	
 Once the hub and node(s) are set up, visit `http://<server_ip>:4444/grid/console` to view the grid.
 
