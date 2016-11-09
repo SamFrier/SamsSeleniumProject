@@ -1,24 +1,17 @@
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-
-#os.environ["webdriver.gecko.driver"] = ""
 
 driver = webdriver.Remote(
-  command_executor = "http://localhost:4444/wd/hub",
+  command_executor = "http://52.210.77.132:4444/wd/hub",
   desired_capabilities = {
     "browserName": "firefox",
-    #"version": "47",
-    #"video": "False",
-    "platform": "LINUX",
-    "marionette": "false",
+    #"platform": "LINUX",
   }
 )
-
-#print ("Video: " + VIDEO_URL + driver.session_id)
 
 try:
   driver.implicitly_wait(30)
   driver.get("http://www.python.org")
+  print(driver.title)
   assert "Python" in driver.title
 finally:
   driver.quit()

@@ -8,20 +8,16 @@ ADD https://goo.gl/Lyo36k /opt/selenium-server-standalone.jar
 RUN apt-get update
 RUN apt-get install -y openjdk-8-jre openjdk-8-jdk
 
-
 # Install Firefox + related drivers
 RUN apt-get install -y firefox
 ADD https://github.com/mozilla/geckodriver/releases/download/v0.11.1/geckodriver-v0.11.1-linux64.tar.gz /opt/gecko/geckodriver-v0.11.1-linux64.tar.gz
 WORKDIR /opt/gecko
 RUN tar zxvf /opt/gecko/geckodriver-v0.11.1-linux64.tar.gz
-RUN chmod +x geckodriver
 ENV PATH $PATH:/opt/gecko
 
 # Set Firefox to run in headless mode
 RUN apt-get install -y xvfb 
-#RUN Xvfb :1 -screen 0 1024x768x16 &
-ENV DISPLAY :1.0
+ENV DISPLAY :1
 
-EXPOSE 5555
-ENTRYPOINT Xvfb :1 -screen 0 1024x768x16 &\
-java -jar /opt/selenium-server-standalone.jar -role node -hub http://selenium-server:4444/grid/register
+ENTRYPOINT Xvfb :1 &\
+java -jar /opt/selenium-server-standalone.jar -role node -hub http://selenium-hub:4444/grid/register
