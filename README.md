@@ -20,15 +20,16 @@ By connecting to the Selenium-Grid, we can run automated tests in a variety of l
 
 For example, let’s define a very simple test in Python. First we must download the Selenium module for Python:
 
-`pip install selenium`
+`~$ pip install selenium`
 
 From here, we can write the following script to test the title of a web page:
 
-`# filename: se_test.py`
+``` python
+# filename: se_test.py
 
-`from selenium import webdriver`
+from selenium import webdriver
 
-`driver = webdriver.Remote(`
+driver = webdriver.Remote(
 command_executor = "http://<hub_ip>:4444/wd/hub", # add your hub’s IP address here
   desired_capabilities = {
     "browserName": "firefox",
@@ -45,6 +46,7 @@ finally:
 When we run this script, Python will create a driver that connects to the Selenium-Grid hub and requests a Firefox browser. The hub will then register a Firefox instance on one of the nodes to this driver. The driver then sends a request for the specified URL to the node, which opens the page in Firefox and sends the contents back to the driver. Finally, we can check the page’s title and test if it is what we were expecting.
 ~$ python se_test.py
 Welcome to Python.org
+```
 
 (Since the unit test was successful, it will not produce any output.)
 
