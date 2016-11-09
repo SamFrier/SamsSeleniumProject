@@ -20,7 +20,9 @@ This guide will focus on installing Selenium-Grid on a machine running Ubuntu 16
 	
 	Alternatively, download the file via the command line: 
 	
+	```Shell
 	~$ wget –O selenium-server-standalone.jar https://goo.gl/Lyo36k
+	```
 	
 2.	Start a hub using the following command: 
 
