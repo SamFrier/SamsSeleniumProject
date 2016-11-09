@@ -26,9 +26,7 @@ This guide will focus on installing Selenium-Grid on a machine running Ubuntu 16
 	
 2.	Start a hub using the following command: 
 
-       	```
         ~$ java -jar selenium-server-standalone.jar -role hub
-        ```
 	
 	If you want to use this machine while the hub is running, specify that the process should run in the background by adding a `&` to the end of the command.
 	
