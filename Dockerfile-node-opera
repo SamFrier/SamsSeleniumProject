@@ -1,0 +1,30 @@
+FROM ubuntu
+MAINTAINER SamFrier
+
+# Download Selenium Server
+ADD https://goo.gl/Lyo36k /opt/selenium-server-standalone.jar
+
+# Install Java
+RUN apt-get update
+RUN apt-get install -y openjdk-8-jre openjdk-8-jdk
+
+# Install Opera + driver
+# NOTE: this doesn't work since the driver doesn't match the available version of Opera!!
+RUN apt-get install -y wget
+RUN wget -O - https://deb.opera.com/archive.key | apt-key add -
+RUN sh -c 'echo "deb http://deb.opera.com/opera-stable/ stable non-free" >> /etc/apt/sources.list.d/opera.list'
+RUN apt-get update
+RUN apt-get install -y opera
+ADD https://github.com/operasoftware/operachromiumdriver/releases/download/v0.2.2/operadriver_linux64.zip /opt/opera/operadriver_linux64.zip
+RUN apt-get install -y unzip
+WORKDIR /opt/opera
+RUN unzip operadriver_linux64.zip
+ENV PATH $PATH:/opt/opera
+
+# Set Opera to run in headless mode
+RUN apt-get install -y xvfb
+ENV DISPLAY :1
+
+# Start the node
+ENTRYPOINT Xvfb :1 &\
+java -jar /opt/selenium-server-standalone.jar -role node -hub http://selenium-hub:4444/grid/register -browser browserName=opera,maxInstances=5

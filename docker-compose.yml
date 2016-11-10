@@ -26,3 +26,12 @@ services:
       dockerfile: Dockerfile-node-chrome
     links:
       - hub:selenium-hub
+
+#  node-opera:
+#    depends_on:
+#      - hub
+#    build:
+#      context: .
+#      dockerfile: Dockerfile-node-opera
+#    links:
+#      - hub:selenium-hub
