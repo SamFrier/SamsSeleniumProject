@@ -26,11 +26,11 @@ This guide will focus on installing Selenium-Grid on a machine running Ubuntu 16
 	
 3.	For the Selenium node(s), download the jar file as above. (We will be using a different set of flags when running it on a node, which will be given later.)
 
-4.	In order for the nodes to run tests, you will need to make sure the browser(s) you want to test on are installed on the node machine. For example, in order to set up Firefox on a node:
+4.	In order for the nodes to run tests, you will need to make sure the browser(s) you want to test on are installed on the node machine, as well as the drivers that Selenium uses to run them (for Selenium Server 3.0 onwards). For example, in order to set up Firefox on a node:
 
 	*	Install the browser itself via e.g. `apt-get`.
 	
-	*	Install the geckodriver for Firefox (this is required for Selenium Server 3.0 and later), which requires its own set of steps:
+	*	Install the geckodriver for Firefox:
 
 		*	Download the geckodriver tarball using e.g. `wget` from here: https://github.com/mozilla/geckodriver
 		
