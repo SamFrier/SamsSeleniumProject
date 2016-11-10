@@ -19,11 +19,11 @@ RUN apt-get install -y unzip
 WORKDIR /opt/chrome
 RUN unzip chromedriver_linux64.zip
 ENV PATH $PATH:/opt/chrome
-# haha, good luck
 
-# Set Chrome to run in headless mode(?)
+# Set Chrome to run in headless mode
 RUN apt-get install -y xvfb
 ENV DISPLAY :1
 
+# Start the node
 ENTRYPOINT Xvfb :1 &\
 java -jar /opt/selenium-server-standalone.jar -role node -hub http://selenium-hub:4444/grid/register -browser browserName=chrome,maxInstances=5

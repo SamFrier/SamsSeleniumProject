@@ -1,10 +1,12 @@
 FROM ubuntu
 MAINTAINER SamFrier
 
+# Install Selenium Server and Java
 ADD https://goo.gl/Lyo36k /opt/selenium-server-standalone.jar
 RUN apt-get update
 RUN apt-get install -y openjdk-8-jre openjdk-8-jdk
 
 EXPOSE 4444
 
+# Start the hub
 ENTRYPOINT java -jar /opt/selenium-server-standalone.jar -role hub

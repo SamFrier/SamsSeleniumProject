@@ -19,5 +19,6 @@ ENV PATH $PATH:/opt/gecko
 RUN apt-get install -y xvfb 
 ENV DISPLAY :1
 
+# Start the node
 ENTRYPOINT Xvfb :1 &\
 java -jar /opt/selenium-server-standalone.jar -role node -hub http://selenium-hub:4444/grid/register -browser browserName=firefox,maxInstances=5
