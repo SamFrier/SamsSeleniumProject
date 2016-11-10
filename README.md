@@ -59,7 +59,7 @@ This guide will focus on installing Selenium-Grid on a machine running Ubuntu 16
 	
 	    ~$ java -jar selenium-server-standalone.jar -role node –hub http://<hub_ip>:4444/grid/register -browser browserName=firefox,maxInstances=5
 	
-Once the hub and node(s) are set up, visit `http://<server_ip>:4444/grid/console` to view the grid.
+Once the hub and node(s) are set up, visit `http://<hub_ip>:4444/grid/console` to view the grid.
 
 
 ## Usage Guide
@@ -87,7 +87,7 @@ command_executor = "http://<hub_ip>:4444/wd/hub",	# add your hub’s IP address 
 )
 
 try:
-  driver.implicitly_wait(30) 				# timeout of 30s when looking for an element
+  driver.implicitly_wait(30)
   driver.get("http://www.python.org")
   print(driver.title)
   assert "Python" in driver.title
