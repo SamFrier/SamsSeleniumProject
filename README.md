@@ -87,7 +87,7 @@ command_executor = "http://<hub_ip>:4444/wd/hub",	# add your hub’s IP address 
 )
 
 try:
-  driver.implicitly_wait(30) 	# timeout of 30s when looking for an element
+  driver.implicitly_wait(30) 				# timeout of 30s when looking for an element
   driver.get("http://www.python.org")
   print(driver.title)
   assert "Python" in driver.title
