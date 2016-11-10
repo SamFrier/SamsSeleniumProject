@@ -18,11 +18,11 @@ services:
     links:
       - hub:selenium-hub
 
-#  node-chrome:
-#    depends-on:
-#      - hub
-#    build:
-#      context: .
-#      dockerfile: Dockerfile-node-chrome
-#    links:
-#      - hub:selenium-hub
+  node-chrome:
+    depends_on:
+      - hub
+    build:
+      context: .
+      dockerfile: Dockerfile-node-chrome
+    links:
+      - hub:selenium-hub
