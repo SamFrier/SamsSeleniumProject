@@ -80,14 +80,14 @@ From here, we can write the following script to test the title of a web page:
 from selenium import webdriver
 
 driver = webdriver.Remote(
-command_executor = "http://<hub_ip>:4444/wd/hub", # add your hub’s IP address here
+command_executor = "http://<hub_ip>:4444/wd/hub",	# add your hub’s IP address here
   desired_capabilities = {
     "browserName": "firefox",
   }
 )
 
 try:
-  driver.implicitly_wait(30) 		# timeout of 30s when looking for an element
+  driver.implicitly_wait(30) 				# timeout of 30s when looking for an element
   driver.get("http://www.python.org")
   print(driver.title)
   assert "Python" in driver.title
