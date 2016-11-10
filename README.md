@@ -39,7 +39,7 @@ This guide will focus on installing Selenium-Grid on a machine running Ubuntu 16
 		
 			    ~$ export PATH=$PATH:/path/to/geckodriver
 		      
-		*	Depending on the environment in which your node is running (e.g. a Docker container), you may want to run the browser in headless mode. In Ubuntu, this can be done via the following method:
+	*	Depending on the environment in which your node is running (e.g. a Docker container), you may want to run the browser in headless mode. In Ubuntu, this can be done via the following method:
 		
 		*	Install Xvfb using the command `apt-get install -y xvfb`.
 		
